@@ -1,0 +1,30 @@
+[
+    {
+        "model": "CreatorCornerapi.category",
+        "pk": 1,
+        "fields": {
+            "label": "General"
+        }
+    },
+    {
+        "model": "CreatorCornerapi.category",
+        "pk": 2,
+        "fields": {
+            "label": "Looking For Collaboration"
+        }
+    },
+    {
+        "model": "CreatorCornerapi.category",
+        "pk": 3,
+        "fields": {
+            "label": "News"
+        }
+    },
+    {
+        "model": "CreatorCornerapi.category",
+        "pk": 4,
+        "fields": {
+            "label": "Ideas"
+        }
+    }
+]

@@ -4,4 +4,4 @@ class Group(models.Model):
     '''Groups Model'''
     title = models.CharField(max_length=30)
     description = models.TextField()
-    timestamp = models.DateTimeField(auto_now=True)
+    timestamp = models.DateField(auto_now=True)

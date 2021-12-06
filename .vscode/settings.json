@@ -3,5 +3,14 @@
     "python.linting.enabled": true,
     "python.linting.pylintArgs": [
         "--load-plugins=pylint_django",
-        "--django-settings-module=CreatorCorner.settings" ]
+        "--django-settings-module=CreatorCorner.settings"
+    ],
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "CreatorCornerDB",
+            "database": "db.sqlite3"
+        }
+    ]
 }

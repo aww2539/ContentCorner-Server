@@ -1,0 +1,22 @@
+[
+    {
+        "model": "CreatorCornerapi.comment",
+        "pk": 1,
+        "fields": {
+            "post": 1,
+            "user": 1,
+            "body": "Awesome post!",
+            "timestamp": "2021-12-06"
+        }
+    },
+    {
+        "model": "CreatorCornerapi.comment",
+        "pk": 2,
+        "fields": {
+            "post": 2,
+            "user": 2,
+            "body": "wicked cool",
+            "timestamp": "2021-12-06"
+        }
+    }
+]

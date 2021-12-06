@@ -8,4 +8,4 @@ class Post(models.Model):
     category = models.ForeignKey("Category", on_delete=CASCADE)
     title = models.CharField(max_length=50)
     body = models.TextField()
-    timestamp = models.DateTimeField(auto_now=True)
+    timestamp = models.DateField(auto_now=True)

@@ -1,0 +1,50 @@
+[
+    {
+        "model": "CreatorCornerapi.post",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "group": 1,
+            "category": 1,
+            "timestamp": "2021-11-07",
+            "title": "Post 1",
+            "body": "1st Post"
+        }
+    },
+    {
+        "model": "CreatorCornerapi.post",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "group": 1,
+            "category": 1,
+            "timestamp": "2021-11-06",
+            "title": "Post 2",
+            "body": "2nd Post"
+        }
+    },
+    {
+        "model": "CreatorCornerapi.post",
+        "pk": 3,
+        "fields": {
+            "user": 1,
+            "group": 2,
+            "category": 1,
+            "timestamp": "2021-11-10",
+            "title": "Post 3",
+            "body": "3rd Post"
+        }
+    },
+    {
+        "model": "CreatorCornerapi.post",
+        "pk": 4,
+        "fields": {
+            "user": 2,
+            "group": 2,
+            "category": 1,
+            "timestamp": "2021-11-10",
+            "title": "Post 4",
+            "body": "4th Post"
+        }
+    }
+]

@@ -6,4 +6,4 @@ class Comment(models.Model):
     post = models.ForeignKey("Post", on_delete=CASCADE, related_name="comments")
     user = models.ForeignKey("Creator", on_delete=CASCADE)
     body = models.TextField(max_length=300)
-    timestamp = models.DateTimeField(auto_now=True)
+    timestamp = models.DateField(auto_now=True)
