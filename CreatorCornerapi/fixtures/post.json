@@ -27,7 +27,7 @@
         "model": "CreatorCornerapi.post",
         "pk": 3,
         "fields": {
-            "user": 1,
+            "creator": 1,
             "group": 2,
             "category": 1,
             "timestamp": "2021-11-10",
@@ -39,7 +39,7 @@
         "model": "CreatorCornerapi.post",
         "pk": 4,
         "fields": {
-            "user": 2,
+            "creator": 2,
             "group": 2,
             "category": 1,
             "timestamp": "2021-11-10",

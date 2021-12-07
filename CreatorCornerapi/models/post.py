@@ -3,7 +3,7 @@ from django.db.models.deletion import CASCADE
 
 class Post(models.Model):
     '''Posts Model'''
-    user = models.ForeignKey("Creator", on_delete=CASCADE)
+    creator = models.ForeignKey("Creator", on_delete=CASCADE)
     group = models.ForeignKey("Group", on_delete=CASCADE)
     category = models.ForeignKey("Category", on_delete=CASCADE)
     title = models.CharField(max_length=50)

@@ -5,7 +5,8 @@
         "fields": {
             "title": "1st Group",
             "description": "Group 1",
-            "timestamp": "2021-12-06"
+            "timestamp": "2021-12-06",
+            "creator": 1
         }
     },
     {
@@ -14,7 +15,8 @@
         "fields": {
             "title": "2nd Group",
             "description": "Group 2",          
-            "timestamp": "2021-12-06"
+            "timestamp": "2021-12-06",
+            "creator": 2
         }
     }
 ]
