@@ -11,7 +11,7 @@ class CategoryView(ViewSet):
         serializer = CategorySerializer(categories, many=True, context={'request': request})
         return Response(serializer.data)
     
-    def retrieve(self, request, pk):
+    def retrieve(self, request, pk=None):
         try:
             category = Category.objects.get(pk=pk)
             serializer = CategorySerializer(category, context={'request': request})

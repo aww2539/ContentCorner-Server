@@ -28,6 +28,11 @@ class GroupView(ViewSet):
         serializer = GroupSerializer(groups, many=True, context={'request': request})
         return Response(serializer.data)
 
+    def retrieve(self, request, pk=None):
+        group = Group.objects.get(pk=pk)
+        serializer = GroupSerializer(group, context={'request': request})
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User

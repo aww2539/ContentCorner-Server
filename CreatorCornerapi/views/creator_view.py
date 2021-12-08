@@ -1,7 +1,5 @@
 from django.contrib.auth.models import User
-from django.core.exceptions import ValidationError
 from rest_framework import status
-from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
@@ -15,7 +13,7 @@ class CreatorView(ViewSet):
         creators_serializer = CreatorSerializer(creators, many=True, context={'request': request})
         return Response(creators_serializer.data)
 
-    def retrieve(self, request, pk):
+    def retrieve(self, request, pk=None):
         try:
             creator = Creator.objects.get(pk=pk)
 
