@@ -7,3 +7,4 @@ class Group(models.Model):
     description = models.TextField()
     timestamp = models.DateField(auto_now=True)
     creator = models.ForeignKey("Creator", on_delete=CASCADE)
+    members = models.ManyToManyField("Creator", through="CreatorGroup", related_name="member")

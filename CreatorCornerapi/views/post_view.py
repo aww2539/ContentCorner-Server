@@ -28,7 +28,20 @@ class PostView(ViewSet):
             return Response({'message': ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
 
     def list(self, request):
+        category = self.request.query_params.get("category",None)
+        creator = self.request.query_params.get("creator",None)
+        group = self.request.query_params.get("group",None)
         posts = Post.objects.all()
+
+        if category is not None:
+            posts = posts.filter(category__id=category)
+
+        if creator is not None:
+            posts = posts.filter(creator__id=creator)
+
+        if group is not None:
+            posts = posts.filter(group__id=group)
+
         serializer = PostSerializer(posts, many=True, context={'request': request})
         return Response(serializer.data, status=status.HTTP_200_OK)
 

@@ -6,7 +6,8 @@
             "title": "1st Group",
             "description": "Group 1",
             "timestamp": "2021-12-06",
-            "creator": 1
+            "creator": 1,
+            "members": [1]
         }
     },
     {
@@ -16,7 +17,8 @@
             "title": "2nd Group",
             "description": "Group 2",          
             "timestamp": "2021-12-06",
-            "creator": 2
+            "creator": 2,
+            "members": [1]
         }
     }
 ]
