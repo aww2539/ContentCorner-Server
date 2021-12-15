@@ -25,7 +25,12 @@ class CommentView(ViewSet):
             return Response({'message': ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
 
     def list(self, request):
+        post = self.request.query_params.get("post",None)
         comments = Comment.objects.all()
+        
+        if post is not None:
+            comments = comments.filter(post__id=post)
+        
         serializer = CommentSerializer(comments, many=True, context={'request': request})
         return Response(serializer.data, status=status.HTTP_200_OK)
 
