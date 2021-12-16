@@ -4,6 +4,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
+from rest_framework.decorators import action
 from CreatorCornerapi.models import Creator
 
 class CreatorView(ViewSet):
@@ -21,6 +22,14 @@ class CreatorView(ViewSet):
             return Response(serializer.data)
         except Creator.DoesNotExist as ex:
             return Response({'message': 'Creator does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
+    @action(methods=['GET'], detail=False)
+    def currentuser(self, request):
+        """"""
+        creator = Creator.objects.get(user=request.auth.user)
+
+        serializer = CreatorSerializer(creator, many=False)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

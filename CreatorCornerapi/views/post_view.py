@@ -9,7 +9,7 @@ from CreatorCornerapi.models import Creator, Group, Category, Post
 
 class PostView(ViewSet):
     def create(self, request):
-        creator = Creator.objects.get(request.auth.user)
+        creator = Creator.objects.get(user=request.auth.user)
         group = Group.objects.get(pk=request.data['groupId'])
         category = Category.objects.get(pk=request.data['categoryId'])
 
@@ -53,6 +53,23 @@ class PostView(ViewSet):
 
         except Post.DoesNotExist as ex:
             return Response({'message', 'Post not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    def update(self, request, pk=None):
+
+        creator = Creator.objects.get(user=request.auth.user)
+        group = Group.objects.get(pk=request.data['groupId'])
+        category = Category.objects.get(pk=request.data['categoryId'])
+
+        post = Post.objects.get(pk=pk)
+        post.title = request.data["title"]
+        post.body = request.data["body"]
+        post.timestamp = request.data["timestamp"]
+        post.creator = creator
+        post.group = group
+        post.category = category
+        post.save()
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
 
     def destroy(self, request, pk):
         post = Post.objects.get(pk=pk)

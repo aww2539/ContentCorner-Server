@@ -9,7 +9,7 @@ from CreatorCornerapi.models import Creator, Group, Category, Post, Comment
 
 class CommentView(ViewSet):
     def create(self, request):
-        creator = Creator.objects.get(request.auth.user)
+        creator = Creator.objects.get(user=request.auth.user)
         post = Post.objects.get(pk=request.data['postId'])
 
         try:
@@ -42,6 +42,20 @@ class CommentView(ViewSet):
 
         except Comment.DoesNotExist as ex:
             return Response({'message', 'Comment not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    def update(self, request, pk=None):
+
+        creator = Creator.objects.get(user=request.auth.user)
+        post = Post.objects.get(pk=request.data['postId'])
+
+        comment = Comment.objects.get(pk=pk)
+        comment.body = request.data["body"]
+        comment.post = post
+        comment.creator = creator
+        comment.timestamp = request.data["timestamp"]
+        comment.save()
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
 
     def destroy(self, request, pk):
         comment = Comment.objects.get(pk=pk)
