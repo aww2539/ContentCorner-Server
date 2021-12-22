@@ -4,3 +4,4 @@ from .category_view import CategoryView
 from .group_view import GroupView
 from .post_view import PostView
 from .comment_view import CommentView
+from .vote_view import VoteView

@@ -18,7 +18,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 from CreatorCornerapi.views import register_user, login_user
-from CreatorCornerapi.views import CreatorView, CategoryView, GroupView, PostView, CommentView
+from CreatorCornerapi.views import CreatorView, CategoryView, GroupView, PostView, CommentView, VoteView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'creators', CreatorView, 'creator')
@@ -26,6 +26,7 @@ router.register(r'categories', CategoryView, 'category')
 router.register(r'groups', GroupView, 'group')
 router.register(r'posts', PostView, 'post')
 router.register(r'comments', CommentView, 'comment')
+router.register(r'votes', VoteView, 'vote')
 
 
 urlpatterns = [

@@ -3,7 +3,7 @@
         "model": "CreatorCornerapi.vote",
         "pk": 1,
         "fields": {
-            "post": 1,
+            "post": 3,
             "creator": 1,
             "upvote": true,
             "downvote": false
@@ -13,7 +13,7 @@
         "model": "CreatorCornerapi.vote",
         "pk": 2,
         "fields": {
-            "post": 2,
+            "post": 4,
             "creator": 1,
             "upvote": false,
             "downvote": true
