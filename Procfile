@@ -1,0 +1,1 @@
+web: gunicorn CreatorCorner.wsgi --log-file -
